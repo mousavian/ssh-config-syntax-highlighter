@@ -2,28 +2,45 @@
     "name": "ssh-config-syntax-highlighter",
     "displayName": "SSH Config Syntax Highlighter",
     "author": {
-        "name": "Rahman Mousavian"
+        "name": "R Mousavian"
     },
     "homepage": "https://github.com/mousavian/ssh-config-syntax-highlighter",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.0.3",
+    "publisher": "mousavian",
+    "icon": "images/ssh-logo.png",
     "engines": {
         "vscode": "^1.58.0"
     },
     "categories": [
         "Programming Languages"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mousavian/ssh-config-syntax-highlighter"
+    },
     "contributes": {
-        "languages": [{
-            "id": "ssh-config",
-            "aliases": ["SSH Config", "ssh-config"],
-            "extensions": ["config","ssh_config"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "ssh-config",
-            "scopeName": "source.ssh-config",
-            "path": "./syntaxes/ssh-config.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "ssh-config",
+                "aliases": [
+                    "SSH Config",
+                    "ssh-config",
+                    "ssh", "Syntax", "Highlighter"
+                ],
+                "extensions": [
+                    "config",
+                    "ssh_config"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "ssh-config",
+                "scopeName": "source.ssh-config",
+                "path": "./syntaxes/ssh-config.tmLanguage.json"
+            }
+        ]
     }
 }
