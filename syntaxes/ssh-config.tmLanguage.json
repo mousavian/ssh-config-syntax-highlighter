@@ -1,0 +1,55 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SSH Config",
+	"scopeName": "source.ssh-config",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.ssh-config",
+				"match": "(?i)\\b(AddressFamily|AddKeysToAgent|BatchMode|BindAddress|ChallengeResponseAuthentication|CheckHostIP|Cipher|Ciphers|Compression|CompressionLevel|ConnectionAttempts|ConnectTimeout|ControlMaster|ControlPath|ControlPersist|DynamicForward|EnableSSHKeysign|EscapeChar|ExitOnForwardFailure|ForwardAgent|ForwardX11|ForwardX11Trusted|GatewayPorts|GlobalKnownHostsFile|GSSAPIAuthentication|GSSAPIKeyExchange|GSSAPIClientIdentity|GSSAPIDelegateCredentials|GSSAPIRenewalForcesRekey|GSSAPITrustDns|HashKnownHosts|HostbasedAuthentication|HostKeyAlgorithms|HostKeyAlias|HostName|IdentitiesOnly|IdentityFile|KbdInteractiveAuthentication|KbdInteractiveDevices|LocalCommand|LocalForward|LogLevel|NumberOfPasswordPrompts|PasswordAuthentication|PermitLocalCommand|PreferredAuthentications|Protocol|ProxyCommand|ProxyJump|RekeyLimit|RemoteForward|RhostsRSAAuthentication|RSAAuthentication|SendEnv|ServerAliveCountMax|ServerAliveInterval|SmartcardDevice|StrictHostKeyChecking|TCPKeepAlive|Tunnel|TunnelDevice|UsePrivilegedPort|User|UserKnownHostsFile|VerifyHostKeyDNS|VisualHostKey|XAuthLocation)\\b"
+			}, {
+				"match": "^(Host)\\s+(.+)$",
+				"captures": {
+					"1": { "name": "keyword.other.definition.ssh-config" },
+					"2": { "name": "entity.name.function.target.ssh-config" }
+				}
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.ssh-config",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ssh-config",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"name": "comment.line.number-sign.ssh-config",
+					"begin": "([\\s]+)?((#)(?:\\s*(?=\\s|$))?)",
+					"beginCaptures": {
+						"1": { "name": "punctuation.whitespace.comment.leading.ssh-config" },
+						"2": { "name": "comment.line.double-slash.ssh-config" },
+						"3": { "name": "punctuation.definition.comment.ssh-config" }
+					},
+					"end": "(?=$)"
+				}
+			]
+		}
+	}
+}
