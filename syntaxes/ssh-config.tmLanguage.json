@@ -41,7 +41,7 @@
 			"patterns": [
 				{
 					"name": "comment.line.number-sign.ssh-config",
-					"begin": "([\\s]+)?((#)(?:\\s*(?=\\s|$))?)",
+					"begin": "^([\\s]+)?((#)(?:\\s*(?=\\s|$))?)",
 					"beginCaptures": {
 						"1": { "name": "punctuation.whitespace.comment.leading.ssh-config" },
 						"2": { "name": "comment.line.double-slash.ssh-config" },
