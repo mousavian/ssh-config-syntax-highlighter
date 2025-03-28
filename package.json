@@ -6,7 +6,7 @@
     },
     "homepage": "https://github.com/mousavian/ssh-config-syntax-highlighter",
     "description": "",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "publisher": "mousavian",
     "icon": "images/ssh-logo.png",
     "engines": {
